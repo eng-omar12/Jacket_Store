@@ -96,7 +96,7 @@ function signup(event) {
 
     localStorage.setItem(email, JSON.stringify(userData));
     localStorage.setItem("loggedUser", email);
-    window.location.href = "../index.html"; // 🔁 تأكد من المسار
+    window.location.href = "../index.html";
 }
 
 
@@ -217,7 +217,7 @@ function saveProfile() {
 
     localStorage.setItem("profileSaved", "true");
 
-    window.location.href = "../index.html"; 
+    window.location.href = "../index.html";
 }
 
 
@@ -275,6 +275,24 @@ function deleteAccount() {
 
 
 
+// إنشاء ستايل لإخفاء أيقونة المتصفح الافتراضية
+const style = document.createElement("style");
+style.innerHTML = `
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear,
+input[type="password"]::-webkit-password-toggle,
+input[type="password"]::-webkit-clear-button,
+input[type="password"]::-webkit-inner-spin-button,
+input[type="password"]::-webkit-password-reveal {
+    display: none !important;
+}
+`;
+// إضافته داخل <head>
+document.head.appendChild(style);
+
+
+
+
 // ✅ إظهار أو إخفاء كلمة المرور
 const toggleSlash = document.getElementById("toggleSlash");
 const toggleEye = document.getElementById("toggleEye");
@@ -283,8 +301,8 @@ const passwordInput = document.getElementById("pass");
 if (toggleEye && toggleSlash && passwordInput) {
     toggleEye.addEventListener("click", () => {
         passwordInput.type = "text";
-        toggleEye.classList.remove("show");
-        toggleEye.classList.add("hide");
+        // toggleEye.classList.remove("show");
+        // toggleEye.classList.add("hide");
         toggleSlash.classList.remove("hide");
     });
 
@@ -292,6 +310,6 @@ if (toggleEye && toggleSlash && passwordInput) {
         passwordInput.type = "password";
         toggleEye.classList.remove("hide");
         toggleSlash.classList.add("hide");
-        toggleEye.classList.add("show");
+        // toggleEye.classList.add("show");
     });
 }

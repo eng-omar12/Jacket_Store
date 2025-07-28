@@ -164,6 +164,7 @@ label {
 .name>input:focus {
     border: 2px solid #853ddfd7;
 }
+
 .password-wrapper {
     position: relative;
     display: flex;
@@ -178,9 +179,11 @@ label {
     user-select: none;
     font-size: 18px;
     width: 20px;
+    height: 20px;
     display: flex;
     justify-content: center;
 }
+
 .show {
     display: inline;
 }
