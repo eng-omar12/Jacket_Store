@@ -96,7 +96,7 @@ function signup(event) {
 
     localStorage.setItem(email, JSON.stringify(userData));
     localStorage.setItem("loggedUser", email);
-    window.location.href = "../index.html";
+    window.location.href = "../index.html"; 
 }
 
 
@@ -217,7 +217,7 @@ function saveProfile() {
 
     localStorage.setItem("profileSaved", "true");
 
-    window.location.href = "../index.html";
+    window.location.href = "../index.html"; 
 }
 
 
